@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-package org.litecoinj.core;
+package org.sumcoinj.core;
 
-import org.litecoinj.utils.MonetaryFormat;
+import org.sumcoinj.utils.MonetaryFormat;
 import com.google.common.math.LongMath;
 import com.google.common.primitives.Longs;
 
@@ -37,7 +37,7 @@ public final class Coin implements Monetary, Comparable<Coin>, Serializable {
     public static final int SMALLEST_UNIT_EXPONENT = 8;
 
     /**
-     * The number of satoshis equal to one litecoin.
+     * The number of satoshis equal to one sumcoin.
      */
     private static final long COIN_VALUE = LongMath.pow(10, SMALLEST_UNIT_EXPONENT);
 

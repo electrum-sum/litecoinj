@@ -16,10 +16,10 @@
 
 package wallettemplate.utils;
 
-import org.litecoinj.core.listeners.DownloadProgressTracker;
-import org.litecoinj.wallet.Wallet;
-import org.litecoinj.wallet.listeners.WalletChangeEventListener;
-import org.litecoinj.core.*;
+import org.sumcoinj.core.listeners.DownloadProgressTracker;
+import org.sumcoinj.wallet.Wallet;
+import org.sumcoinj.wallet.listeners.WalletChangeEventListener;
+import org.sumcoinj.core.*;
 import javafx.application.Platform;
 import javafx.beans.property.ReadOnlyDoubleProperty;
 import javafx.beans.property.ReadOnlyObjectProperty;
@@ -29,7 +29,7 @@ import javafx.beans.property.SimpleObjectProperty;
 import java.util.Date;
 
 /**
- * A class that exposes relevant litecoin stuff as JavaFX bindable properties.
+ * A class that exposes relevant sumcoin stuff as JavaFX bindable properties.
  */
 public class BitcoinUIModel {
     private SimpleObjectProperty<Address> address = new SimpleObjectProperty<>();

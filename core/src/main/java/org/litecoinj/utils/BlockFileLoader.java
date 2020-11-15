@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package org.litecoinj.utils;
+package org.sumcoinj.utils;
 
-import org.litecoinj.core.Block;
-import org.litecoinj.core.NetworkParameters;
-import org.litecoinj.core.ProtocolException;
-import org.litecoinj.core.Utils;
+import org.sumcoinj.core.Block;
+import org.sumcoinj.core.NetworkParameters;
+import org.sumcoinj.core.ProtocolException;
+import org.sumcoinj.core.Utils;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -54,11 +54,11 @@ public class BlockFileLoader implements Iterable<Block>, Iterator<Block> {
         String defaultDataDir;
         String OS = System.getProperty("os.name").toLowerCase();
         if (OS.indexOf("win") >= 0) {
-            defaultDataDir = System.getenv("APPDATA") + "\\.litecoin\\blocks\\";
+            defaultDataDir = System.getenv("APPDATA") + "\\.sumcoin\\blocks\\";
         } else if (OS.indexOf("mac") >= 0 || (OS.indexOf("darwin") >= 0)) {
             defaultDataDir = System.getProperty("user.home") + "/Library/Application Support/Bitcoin/blocks/";
         } else {
-            defaultDataDir = System.getProperty("user.home") + "/.litecoin/blocks/";
+            defaultDataDir = System.getProperty("user.home") + "/.sumcoin/blocks/";
         }
         
         List<File> list = new LinkedList<>();

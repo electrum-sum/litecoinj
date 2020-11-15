@@ -15,18 +15,18 @@
  * limitations under the License.
  */
 
-package org.litecoinj.protocols.payments;
+package org.sumcoinj.protocols.payments;
 
-import org.litecoinj.core.*;
-import org.litecoinj.crypto.X509Utils;
-import org.litecoinj.script.ScriptBuilder;
+import org.sumcoinj.core.*;
+import org.sumcoinj.crypto.X509Utils;
+import org.sumcoinj.script.ScriptBuilder;
 
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.InvalidProtocolBufferException;
-import org.litecoin.protocols.payments.Protos;
+import org.sumcoin.protocols.payments.Protos;
 
 import javax.annotation.Nullable;
 import java.io.Serializable;
@@ -48,9 +48,9 @@ import java.util.List;
 public class PaymentProtocol {
 
     // MIME types as defined in BIP71.
-    public static final String MIMETYPE_PAYMENTREQUEST = "application/litecoin-paymentrequest";
-    public static final String MIMETYPE_PAYMENT = "application/litecoin-payment";
-    public static final String MIMETYPE_PAYMENTACK = "application/litecoin-paymentack";
+    public static final String MIMETYPE_PAYMENTREQUEST = "application/sumcoin-paymentrequest";
+    public static final String MIMETYPE_PAYMENT = "application/sumcoin-payment";
+    public static final String MIMETYPE_PAYMENTACK = "application/sumcoin-paymentack";
 
     /**
      * Create a payment request with one standard pay to address output. You may want to sign the request using

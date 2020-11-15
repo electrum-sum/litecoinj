@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-package org.litecoinj.protocols.channels;
+package org.sumcoinj.protocols.channels;
 
-import org.litecoinj.core.Coin;
-import org.litecoinj.core.TransactionBroadcaster;
-import org.litecoinj.core.Utils;
-import org.litecoinj.wallet.Wallet;
-import org.litecoin.paymentchannel.Protos;
+import org.sumcoinj.core.Coin;
+import org.sumcoinj.core.TransactionBroadcaster;
+import org.sumcoinj.core.Utils;
+import org.sumcoinj.wallet.Wallet;
+import org.sumcoin.paymentchannel.Protos;
 import org.easymock.Capture;
 import org.junit.Before;
 import org.junit.Test;
@@ -31,8 +31,8 @@ import java.util.Arrays;
 import java.util.Collection;
 
 import static junit.framework.TestCase.assertTrue;
-import static org.litecoin.paymentchannel.Protos.TwoWayChannelMessage;
-import static org.litecoin.paymentchannel.Protos.TwoWayChannelMessage.MessageType;
+import static org.sumcoin.paymentchannel.Protos.TwoWayChannelMessage;
+import static org.sumcoin.paymentchannel.Protos.TwoWayChannelMessage.MessageType;
 import static org.easymock.EasyMock.*;
 import static org.junit.Assert.assertEquals;
 

@@ -14,22 +14,22 @@
  * limitations under the License.
  */
 
-package org.litecoinj.protocols.channels;
+package org.sumcoinj.protocols.channels;
 
 import com.google.common.collect.ImmutableMap;
 import com.google.common.util.concurrent.AsyncFunction;
 import com.google.common.util.concurrent.MoreExecutors;
-import org.litecoinj.core.*;
-import org.litecoinj.protocols.channels.PaymentChannelCloseException.CloseReason;
-import org.litecoinj.utils.Threading;
-import org.litecoinj.wallet.Wallet;
+import org.sumcoinj.core.*;
+import org.sumcoinj.protocols.channels.PaymentChannelCloseException.CloseReason;
+import org.sumcoinj.utils.Threading;
+import org.sumcoinj.wallet.Wallet;
 
 import com.google.common.util.concurrent.FutureCallback;
 import com.google.common.util.concurrent.Futures;
 import com.google.common.util.concurrent.ListenableFuture;
 import com.google.protobuf.ByteString;
 import net.jcip.annotations.GuardedBy;
-import org.litecoin.paymentchannel.Protos;
+import org.sumcoin.paymentchannel.Protos;
 import org.slf4j.LoggerFactory;
 import org.spongycastle.crypto.params.KeyParameter;
 
@@ -205,7 +205,7 @@ public class PaymentChannelServer {
      *                               rejected by clients, and a value too low will require excessive channel reopening
      *                               and may cause fees to be require to settle the channel. A reasonable value depends
      *                               entirely on the expected maximum for the channel, and should likely be somewhere
-     *                               between a few bitcents and a litecoin.
+     *                               between a few bitcents and a sumcoin.
      * @param conn A callback listener which represents the connection to the client (forwards messages we generate to
      *             the client and will close the connection on request)
      */
@@ -224,7 +224,7 @@ public class PaymentChannelServer {
      *                               rejected by clients, and a value too low will require excessive channel reopening
      *                               and may cause fees to be require to settle the channel. A reasonable value depends
      *                               entirely on the expected maximum for the channel, and should likely be somewhere
-     *                               between a few bitcents and a litecoin.
+     *                               between a few bitcents and a sumcoin.
      * @param serverChannelProperties Modify the channel's properties. You may extend {@link DefaultServerChannelProperties}
      * @param conn A callback listener which represents the connection to the client (forwards messages we generate to
      *              the client and will close the connection on request)

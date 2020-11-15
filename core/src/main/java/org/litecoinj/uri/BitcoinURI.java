@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-package org.litecoinj.uri;
+package org.sumcoinj.uri;
 
-import org.litecoinj.core.Address;
-import org.litecoinj.core.AddressFormatException;
-import org.litecoinj.core.Coin;
-import org.litecoinj.core.NetworkParameters;
-import org.litecoinj.params.AbstractBitcoinNetParams;
+import org.sumcoinj.core.Address;
+import org.sumcoinj.core.AddressFormatException;
+import org.sumcoinj.core.Coin;
+import org.sumcoinj.core.NetworkParameters;
+import org.sumcoinj.params.AbstractBitcoinNetParams;
 
 import javax.annotation.Nullable;
 
@@ -50,8 +50,8 @@ import static com.google.common.base.Preconditions.checkNotNull;
  * <p>The following input forms are accepted:</p>
  *
  * <ul>
- * <li>{@code litecoin:<address>}</li>
- * <li>{@code litecoin:<address>?<name1>=<value1>&<name2>=<value2>} with multiple
+ * <li>{@code sumcoin:<address>}</li>
+ * <li>{@code sumcoin:<address>?<name1>=<value1>&<name2>=<value2>} with multiple
  * additional name/value pairs</li>
  * </ul>
  *
@@ -85,12 +85,12 @@ public class BitcoinURI {
     public static final String FIELD_PAYMENT_REQUEST_URL = "r";
 
     /**
-     * URI for Bitcoin network. Use {@link org.litecoinj.params.AbstractBitcoinNetParams#BITCOIN_SCHEME} if you specifically
-     * need Bitcoin, or use {@link org.litecoinj.core.NetworkParameters#getUriScheme} to get the scheme
+     * URI for Bitcoin network. Use {@link org.sumcoinj.params.AbstractBitcoinNetParams#BITCOIN_SCHEME} if you specifically
+     * need Bitcoin, or use {@link org.sumcoinj.core.NetworkParameters#getUriScheme} to get the scheme
      * from network parameters.
      */
     @Deprecated
-    public static final String BITCOIN_SCHEME = "litecoin";
+    public static final String BITCOIN_SCHEME = "sumcoin";
     private static final String ENCODED_SPACE_CHARACTER = "%20";
     private static final String AMPERSAND_SEPARATOR = "&";
     private static final String QUESTION_MARK_SEPARATOR = "?";
@@ -134,13 +134,13 @@ public class BitcoinURI {
             throw new BitcoinURIParseException("Bad URI syntax", e);
         }
 
-        // URI is formed as  litecoin:<address>?<query parameters>
-        // blockchain.info generates URIs of non-BIP compliant form litecoin://address?....
+        // URI is formed as  sumcoin:<address>?<query parameters>
+        // blockchain.info generates URIs of non-BIP compliant form sumcoin://address?....
         // We support both until Ben fixes his code.
         
-        // Remove the litecoin scheme.
+        // Remove the sumcoin scheme.
         // (Note: getSchemeSpecificPart() is not used as it unescapes the label and parse then fails.
-        // For instance with : litecoin:129mVqKUmJ9uwPxKJBnNdABbuaaNfho4Ha?amount=0.06&label=Tom%20%26%20Jerry
+        // For instance with : sumcoin:129mVqKUmJ9uwPxKJBnNdABbuaaNfho4Ha?amount=0.06&label=Tom%20%26%20Jerry
         // the & (%26) in Tom and Jerry gets interpreted as a separator and the label then gets parsed
         // as 'Tom ' instead of 'Tom & Jerry')
         String blockchainInfoScheme = scheme + "://";
@@ -157,7 +157,7 @@ public class BitcoinURI {
         // Split off the address from the rest of the query parameters.
         String[] addressSplitTokens = schemeSpecificPart.split("\\?", 2);
         if (addressSplitTokens.length == 0)
-            throw new BitcoinURIParseException("No data found after the litecoin: prefix");
+            throw new BitcoinURIParseException("No data found after the sumcoin: prefix");
         String addressToken = addressSplitTokens[0];  // may be empty!
 
         String[] nameValuePairTokens;

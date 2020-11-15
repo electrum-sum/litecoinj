@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-package org.litecoinj.testing;
+package org.sumcoinj.testing;
 
 import com.google.common.base.*;
 import com.google.common.util.concurrent.*;
-import org.litecoinj.core.*;
-import org.litecoinj.net.*;
-import org.litecoinj.store.*;
-import org.litecoinj.utils.*;
+import org.sumcoinj.core.*;
+import org.sumcoinj.net.*;
+import org.sumcoinj.store.*;
+import org.sumcoinj.utils.*;
 
 import java.net.*;
 import java.util.concurrent.*;
@@ -82,7 +82,7 @@ public class TestWithPeerGroup extends TestWithNetworkConnections {
             peerGroup = createPeerGroup(new BlockingClientManager());
         peerGroup.setPingIntervalMsec(0);  // Disable the pings as they just get in the way of most tests.
         peerGroup.addWallet(wallet);
-        peerGroup.setUseLocalhostPeerWhenPossible(false); // Prevents from connecting to litecoin nodes on localhost.
+        peerGroup.setUseLocalhostPeerWhenPossible(false); // Prevents from connecting to sumcoin nodes on localhost.
     }
 
     protected boolean blockJobs = false;
