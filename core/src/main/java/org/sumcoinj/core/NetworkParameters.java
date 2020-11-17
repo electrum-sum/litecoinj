@@ -46,7 +46,7 @@ public abstract class NetworkParameters {
     /**
      * The alert signing key originally owned by Satoshi, and now passed on to Gavin along with a few others.
      */
-    public static final byte[] SATOSHI_KEY = Utils.HEX.decode("040184710fa689ad5023690c80f3a49c8f13f8d45b8c857fbcbc8bc4a8e4d3eb4b10f4d4604fa08dce601aaf0f470216fe1b51850b4acf21b179c45070ac7b03a9");
+    public static final byte[] SATOSHI_KEY = Utils.HEX.decode("04678afdb0fe5548271967f1a67130b7105cd6a828e03909a67962e0ea1f61deb649f6bc3f4cef38c4f35504e51ec112de5c384df7ba0b8d578a4c702b6bf11d5f"); //sumcoin√ ∑
 
     /** The string returned by getId() for the main, production network where people trade things. */
     public static final String ID_MAINNET = "org.sumcoin.production";
@@ -131,7 +131,7 @@ public abstract class NetworkParameters {
             throw new RuntimeException(e);
         }
         genesisBlock.addTransaction(t);
-        genesisBlock.setMerkleRoot(Sha256Hash.wrap("97ddfbbae6be97fd6cdf3e7ca13232a3afff2353e29badfab7f73011edd4ced9"));
+        genesisBlock.setMerkleRoot(Sha256Hash.wrap("b82fb0f59328af96928f3a7648461f3db41fbfc2fef4e5ec6f7cf78ca067eacc")); //sumcoin√ ∑
         return genesisBlock;
     }
 
