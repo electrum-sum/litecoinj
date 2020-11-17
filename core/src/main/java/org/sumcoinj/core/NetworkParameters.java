@@ -125,7 +125,7 @@ public abstract class NetworkParameters {
                     ("41044870341873accab7600d65e204bb4ae47c43d20c562ebfbf70cbcb188da98dec8b5ccf0526c8e4d954c6b47b898cc30adf1ff77c2e518ddc9785b87ccb90b8cdac"));
 
             scriptPubKeyBytes.write(ScriptOpCodes.OP_CHECKSIG);
-            t.addOutput(new TransactionOutput(n, t, FIFTY_COINS, scriptPubKeyBytes.toByteArray()));
+            t.addOutput(new TransactionOutput(n, t, ONEHUNDRED_COINS, scriptPubKeyBytes.toByteArray()));
         } catch (Exception e) {
             // Cannot happen.
             throw new RuntimeException(e);
@@ -135,7 +135,7 @@ public abstract class NetworkParameters {
         return genesisBlock;
     }
 
-    public static final int TARGET_TIMESPAN = (int)(3.5 * 24 * 60 * 60);  // 1 block difficulty cycle, on average. todo
+    public static final int TARGET_TIMESPAN = (int)(1 * 24 * 60 * 60);  // 1 block difficulty cycle, on average. sumcoin√ ∑
     public static final int TARGET_SPACING = (int)(0.5 * 60);  // 30 seconds per block. //sumcoin√ ∑
     public static final int INTERVAL = TARGET_TIMESPAN / TARGET_SPACING;
 
@@ -144,12 +144,12 @@ public abstract class NetworkParameters {
      * network rules in a soft-forking manner, that is, blocks that don't follow the rules are accepted but not
      * mined upon and thus will be quickly re-orged out as long as the majority are enforcing the rule.
      */
-    public static final int BIP16_ENFORCE_TIME = 1333238400;
+    public static final int BIP16_ENFORCE_TIME = 1333238400; //ignore
 
     /**
      * The maximum number of coins to be generated
      */
-    public static final long MAX_COINS = 100000000;
+    public static final long MAX_COINS = 100000000; //sumcoin√ ∑
 
     /**
      * The maximum money to be generated
